@@ -1,3 +1,4 @@
+import ContactForm from '@/app/landing/components/Contact/ContactForm';
 import HeroContact from '@/app/landing/components/Contact/HeroContact';
 import Footer from '@/app/landing/components/Home/footer/footer';
 import { HiOutlineLocationMarker, HiOutlineMail, HiOutlinePhone } from 'react-icons/hi';
@@ -51,26 +52,7 @@ const ContactPage = () => {
         </div>
       </div>
         {/* Contact Form */}
-        <div className="flex-1 bg-blue-900 text-white p-8 rounded-3xl shadow-lg">
-          <h2 className="text-2xl font-bold mb-4">Use The Contact Form Below To Send Us A Message.</h2>
-          <p className="text-gray-300 mb-6">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis.
-          </p>
-          <form className="space-y-4">
-            <div className="flex gap-4">
-              <input type="text" placeholder="First Name Eg. Jane" className="w-full p-3 rounded-full text-gray-900 focus:outline-none focus:ring-2 focus:ring-orange-500" />
-              <input type="text" placeholder="Last Name Eg. Cale" className="w-full p-3 rounded-full text-gray-900 focus:outline-none focus:ring-2 focus:ring-orange-500" />
-            </div>
-            <div className="flex gap-4">
-              <input type="email" placeholder="Email" className="w-full p-3 rounded-full text-gray-900 focus:outline-none focus:ring-2 focus:ring-orange-500" />
-              <input type="text" placeholder="Subject" className="w-full p-3 rounded-full text-gray-900 focus:outline-none focus:ring-2 focus:ring-orange-500" />
-            </div>
-            <textarea placeholder="Your message..." className="w-full p-3 rounded-2xl text-gray-900 h-32 focus:outline-none focus:ring-2 focus:ring-orange-500"></textarea>
-            <button type="submit" className="w-full bg-orange-500 text-white font-semibold py-3 rounded-full hover:bg-orange-600 transition">
-              Send Message
-            </button>
-          </form>
-        </div>
+        <ContactForm />
       </div>
     </div>
     <Footer/>
