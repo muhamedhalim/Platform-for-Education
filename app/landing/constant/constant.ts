@@ -17,8 +17,8 @@ export const navlinks=[
     },
     {
         id:4,
-        url:"/pages/Services",
-        Label:"Services",
+        url:"/pages/Categories",
+        Label:"Learning areas",
     },
     {
         id:5,

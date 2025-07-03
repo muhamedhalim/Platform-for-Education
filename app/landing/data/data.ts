@@ -1,3 +1,4 @@
+
 export const coursesData = [
   {
     id: 1,
@@ -9,6 +10,8 @@ export const coursesData = [
     lessons: 20,
     students: 150,
     category: "Programming",
+    difficulty: ["Beginner", "Intermediate"], 
+    description: "Learn the fundamentals of JavaScript, the most popular programming language for web development.",
   },
   {
     id: 2,
@@ -20,6 +23,8 @@ export const coursesData = [
     lessons: 25,
     students: 120,
     category: "Programming",
+    difficulty: ["Intermediate", "Advanced"],
+    description: "Dive deep into Python with advanced concepts, libraries, and frameworks for professional development.",
   },
   {
     id: 3,
@@ -31,6 +36,8 @@ export const coursesData = [
     lessons: 30,
     students: 90,
     category: "Design",
+    difficulty: ["Beginner", "Intermediate"],
+    description: "Master the principles of user interface and user experience design to create engaging digital products.",
   },
   {
     id: 4,
@@ -42,6 +49,8 @@ export const coursesData = [
     lessons: 18,
     students: 110,
     category: "Hacking",
+    difficulty: ["Beginner", "Intermediate"],
+    description: "Learn the basics of ethical hacking, penetration testing, and cybersecurity to protect systems from threats.",
   },
   {
     id: 5,
@@ -53,6 +62,8 @@ export const coursesData = [
     lessons: 40,
     students: 200,
     category: "Programming",
+    difficulty: ["Intermediate", "Advanced"],
+    description: "Become a full stack developer by mastering both front-end and back-end technologies for web applications.",
   },
   {
     id: 6,
@@ -64,6 +75,8 @@ export const coursesData = [
     lessons: 22,
     students: 80,
     category: "Software",
+    difficulty: ["Beginner", "Intermediate"],
+    description: "Understand software testing methodologies, tools, and best practices to ensure quality in software development.",
   },
   {
   id: 7,
@@ -75,6 +88,8 @@ export const coursesData = [
   lessons: 27,
   students: 135,
   category: "Business",
+  difficulty: ["Beginner", "Intermediate"],
+  description: "Learn the essentials of starting and running a successful business, from ideation to execution and growth strategies.",
 },
 {
   id: 8,
@@ -86,6 +101,8 @@ export const coursesData = [
   lessons: 33,
   students: 175,
   category: "Marketing",
+  difficulty: ["Beginner", "Intermediate"],
+  description: "Learn the latest digital marketing strategies, including SEO, social media, and content marketing to boost your online presence.",
 },
 {
   id: 9,
@@ -97,6 +114,8 @@ export const coursesData = [
   lessons: 29,
   students: 150,
   category: "AI",
+   difficulty: ["Beginner", "Intermediate"],
+  description: "Explore the fundamentals of artificial intelligence, machine learning, and their applications in various fields.",
 },
 {
   id: 10,
@@ -108,6 +127,8 @@ export const coursesData = [
   lessons: 18,
   students: 120,
   category: "Personal Development",
+  difficulty: ["Beginner", "Intermediate"],
+  description: "Enhance your public speaking and presentation skills to communicate effectively and confidently in any setting.",
 },
 {
   id: 11,
@@ -119,6 +140,8 @@ export const coursesData = [
   lessons: 22,
   students: 95,
   category: "Languages",
+  difficulty: ["Beginner"],
+  description: "Start your journey in learning French with this beginner-friendly course covering basic vocabulary and grammar.",
 },
 {
   id: 12,
@@ -130,6 +153,8 @@ export const coursesData = [
   lessons: 30,
   students: 140,
   category: "Photography",
+  difficulty: ["Beginner", "Intermediate"],
+  description: "Master the art of photography with techniques, tips, and tricks to take stunning photos like a professional.",
 },
 {
   id: 13,
@@ -141,6 +166,8 @@ export const coursesData = [
   lessons: 25,
   students: 125,
   category: "Data",
+  difficulty: ["Beginner", "Intermediate"],
+  description: "Learn how to use Excel for data analysis, including formulas, functions, and data visualization techniques.",
 },
 {
   id: 14,
@@ -152,6 +179,8 @@ export const coursesData = [
   lessons: 28,
   students: 145,
   category: "Business",
+  difficulty: ["Beginner", "Intermediate"],
+  description: "Discover how to build and grow an e-commerce business using Shopify, from setting up your store to marketing strategies.",
 },
 {
   id: 15,
@@ -163,6 +192,8 @@ export const coursesData = [
   lessons: 31,
   students: 155,
   category: "Management",
+  difficulty: ["Intermediate", "Advanced"],
+  description: "Learn project management methodologies like Agile and Scrum to effectively manage projects and teams in dynamic environments.",
 },
 {
   id: 16,
@@ -174,6 +205,8 @@ export const coursesData = [
   lessons: 20,
   students: 100,
   category: "Media",
+  difficulty: ["Beginner", "Intermediate"],
+  description: "Explore the world of voice over and audio production, learning techniques for recording, editing, and producing high-quality audio.",
 },
 {
   id: 28,
@@ -185,6 +218,8 @@ export const coursesData = [
   lessons: 24,
   students: 98,
   category: "Music",
+  difficulty: ["Beginner", "Intermediate"],
+  description: "Learn the fundamentals of music theory and composition, including scales, chords, and songwriting techniques.",
 },
 ];
 
