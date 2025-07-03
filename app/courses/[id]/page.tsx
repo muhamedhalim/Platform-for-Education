@@ -1,31 +1,32 @@
+"use client";
 import { notFound } from "next/navigation";
 import HeroContact from "@/app/landing/components/Contact/HeroContact";
 import { coursesData } from "@/app/landing/data/data";
 import { ReactNode } from "react";
+import { use } from "react";
 
-type Course = {
-  duration: ReactNode;
-  id: number;
-  image: string;
-  title: string;
-  price: number;
-  author: string;
-  reviewNumber: number;
-  lessons: number;
-  students: number;
-  category: string;
-  description?: string;
-  whatYouLearn?: string[];
-  difficulty?: string[];
-};
-
-interface CoursePageProps {
-  params: { id: string };
+interface Props {
+  params: Promise<{ id: string }>;
 }
 
-export default function CoursePage({ params }: CoursePageProps) {
-  const id = parseInt(params.id, 10);
-  const course = (coursesData as Course[]).find((c) => c.id === id);
+export default function CourseDetailsPage({ params }: { params: Promise<{ id: string }> }) {
+    const { id } = use(params)
+  type Course = {
+    duration: ReactNode;
+    id: number;
+    image: string;
+    title: string;
+    price: number;
+    author: string;
+    reviewNumber: number;
+    lessons: number;
+    students: number;
+    category: string;
+    description?: string;
+    whatYouLearn?: string[];
+    difficulty?: string[];
+  };
+  const course = (coursesData as Course[]).find((c) => c.id === Number(id));
 
   if (!course) return notFound();
 
@@ -34,9 +35,12 @@ export default function CoursePage({ params }: CoursePageProps) {
       <HeroContact />
       <div className="container mx-auto px-4 py-10">
         <div className="flex flex-col lg:flex-row gap-8">
+          {/* Main Content */}
           <div className="lg:w-2/3">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">{course.title}</h1>
             <p className="text-gray-600 text-lg mb-6">{course.description}</p>
+
+            {/* Course Info Tags */}
             <div className="flex flex-wrap gap-3 mb-6">
               <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm">
                 Category: {course.category}
@@ -52,6 +56,7 @@ export default function CoursePage({ params }: CoursePageProps) {
               </span>
             </div>
 
+            {/* What You Will Learn */}
             {Array.isArray(course.whatYouLearn) && course.whatYouLearn.length > 0 && (
               <div className="mb-10">
                 <h2 className="text-2xl font-semibold mb-4">What You'll Learn</h2>
@@ -68,56 +73,62 @@ export default function CoursePage({ params }: CoursePageProps) {
               </div>
             )}
           </div>
-
-          <div className="lg:w-1/3">
-            <div className="bg-white p-6 rounded-lg shadow-md sticky top-10 border border-gray-200">
-              {course.image && (
+          {/* Sidebar Card */}
+            <div className="lg:w-1/3">
+             <div className="bg-white p-6 rounded-lg shadow-md sticky top-10 border border-gray-200">
+    
+                {/* Course Image */}
+                {course.image && (
                 <div className="mb-4">
-                  <img
+                    <img
                     src={course.image}
                     alt={course.title}
                     className="w-full h-48 object-cover rounded-md"
-                  />
+                    />
                 </div>
-              )}
-              <h3 className="text-xl font-semibold mb-2">Join This Course</h3>
-              <p className="text-gray-600 mb-4">
-                Start learning today with over {course.students}+ learners!
-              </p>
+                )}
 
-              <div className="mb-4">
+                <h3 className="text-xl font-semibold mb-2">Join This Course</h3>
+                <p className="text-gray-600 mb-4">
+                Start learning today with over {course.students}+ learners!
+                </p>
+
+                {/* Difficulty */}
+                <div className="mb-4">
                 <p className="text-gray-600 mb-2 font-medium">Difficulty:</p>
                 <div className="flex gap-2 flex-wrap">
-                  {course.difficulty?.map((level, i) => (
+                    {course.difficulty?.map((level, i) => (
                     <span
-                      key={i}
-                      className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm"
+                        key={i}
+                        className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm"
                     >
-                      {level}
+                        {level}
                     </span>
-                  ))}
+                    ))}
                 </div>
-              </div>
+                </div>
 
-              <div className="mb-4">
+                {/* Price */}
+                <div className="mb-4">
                 <p className="text-3xl font-bold text-gray-900 mb-1">
-                  ${course.price.toLocaleString()}
+                    ${course.price.toLocaleString()}
                 </p>
                 <p className="text-gray-500 text-sm">Inclusive of all taxes</p>
-              </div>
+                </div>
 
-              <button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-4 rounded-lg font-medium mb-3">
+                <button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-4 rounded-lg font-medium mb-3">
                 Enroll Now
-              </button>
-              <button className="w-full bg-white border border-blue-600 text-blue-600 hover:bg-blue-50 py-3 px-4 rounded-lg font-medium">
-                Add to Cart
-              </button>
+                </button>
 
-              <p className="text-center text-gray-500 mt-4 text-sm">
+                <button className="w-full bg-white border border-blue-600 text-blue-600 hover:bg-blue-50 py-3 px-4 rounded-lg font-medium">
+                Add to Cart
+                </button>
+
+                <p className="text-center text-gray-500 mt-4 text-sm">
                 30-Day Money Back Guarantee
-              </p>
+                </p>
             </div>
-          </div>
+            </div>
         </div>
       </div>
     </>
