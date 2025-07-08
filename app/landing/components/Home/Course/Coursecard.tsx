@@ -17,7 +17,7 @@ type Props = {
         lessons: number;
         students: number;
         category: string;
-        difficulty: string[]; 
+        difficulty?: string[]; 
     };
 };
 
@@ -75,7 +75,7 @@ const CourseCard = ({ course }: Props) => {
                         </div>
 
                         {/* ✅ Difficulty */}
-                        {course.difficulty?.length > 0 && (
+                        {Array.isArray(course.difficulty) && course.difficulty.length > 0 && (
                             <div className="mt-4">
                                 <p className="text-sm text-gray-600 font-medium mb-1">Difficulty:</p>
                                 <div className="flex gap-2 flex-wrap">

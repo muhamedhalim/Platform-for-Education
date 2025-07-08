@@ -5,13 +5,10 @@ import { coursesData } from "@/app/landing/data/data";
 import { ReactNode } from "react";
 import { use } from "react";
 
-interface Props {
-  params: Promise<{ id: string }>;
-}
 
 export default function CourseDetailsPage({ params }: { params: Promise<{ id: string }> }) {
     const { id } = use(params)
-  type Course = {
+    type Course = {
     duration: ReactNode;
     id: number;
     image: string;
